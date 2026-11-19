@@ -1,0 +1,21 @@
+# 构建产物
+bin/
+obj/
+publish/
+*.user
+*.suo
+.vs/
+
+# 工具目录里的构建输出
+tools/**/bin/
+tools/**/obj/
+
+# 运行时产物（不该进仓库）
+tools/snss-probe/out-*
+tools/snss-probe/fixtures/
+*.log
+
+# 系统
+Thumbs.db
+desktop.ini
+.DS_Store

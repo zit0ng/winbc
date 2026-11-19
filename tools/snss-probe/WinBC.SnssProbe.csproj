@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <AssemblyName>SnssProbe</AssemblyName>
+    <RootNamespace>SnssProbe</RootNamespace>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <!-- 只是验证工具，不要污染主项目 -->
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <!-- 直接把主项目里的两个文件 link 进来编译，不动它们 -->
+    <Compile Include="..\..\src\WinBC\Models\Snapshot.cs" Link="Linked\Snapshot.cs" />
+    <Compile Include="..\..\src\WinBC\Capture\BrowserSessionReader.cs" Link="Linked\BrowserSessionReader.cs" />
+  </ItemGroup>
+
+</Project>
